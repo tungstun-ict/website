@@ -4,7 +4,7 @@ import { Menu } from "react-feather";
 import styles from "./header.module.scss";
 
 const Header = ({}) => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   return (
     <div className={`${styles.container}`}>
