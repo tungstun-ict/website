@@ -10,12 +10,16 @@
   text-decoration: none;
   overflow: hidden;
 
-  &:hover  > .overlay {
+  &:hover  > .overlay_left {
     bottom: 0;
+  }
+
+  &:hover > .overlay_right {
+    top: 0;
   }
 }
 
-.text {
+.abbreviation {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +30,25 @@
   text-align: center;
   flex: 1;
   z-index: 2;
+  grid-row-start: 1;
+}
 
+.text {
+  font-size: 1rem;
+  color: white;
+  margin: 0;
+}
+
+.top {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text {
+  text-decoration: none;
   grid-row-start: 1;
 }
 
@@ -47,9 +69,18 @@
 
 .overlay {
   position: absolute;
-  width: 100%;
+  width: 50%;
   height: 100%;
   background-color: white;
-  bottom: calc(100%);
   transition: 0.3s ease-in-out;
+}
+
+.overlay_left {
+  bottom: calc(100%);
+  left: 0;
+}
+
+.overlay_right {
+  top: calc(100%);
+  right: 0;
 }

@@ -1,0 +1,65 @@
+@use "../../variables.scss";
+
+.container {
+  position: relative;
+  z-index: 5;
+  clip: url(#title-clip);
+
+  &:hover > .title__top {
+    transform: translate(-50%, -100%);
+    opacity: 1;
+  }
+
+  &:hover > .title__bottom {
+    transform: translate(-50%, 0%);
+    opacity: 1;
+  }
+
+  &:hover .title_clip {
+    width: 800px;
+    height: 800px;
+  }
+}
+
+.title_clip {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.title {
+  font-size: 8rem;
+  transition: 0.3s ease-in-out;
+  color: white;
+
+  &__white {
+    position: relative;
+    font-weight: bold;
+  }
+
+  &__top,
+  &__bottom {
+    opacity: 0;
+    height: 200px;
+    box-sizing: border-box;
+    margin: 100px 0;
+    user-select: none;
+    position: absolute;
+    margin: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__top {
+    font-family: "oskar-inline", serif;
+  }
+
+  &__bottom {
+    font-family: "voltage", serif;
+  }
+}
