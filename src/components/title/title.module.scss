@@ -1,0 +1,15 @@
+.container {
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  color: white;
+  font-weight: 800;
+  z-index: 3;
+  font-size: 3rem;
+}

@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./hero.module.scss";
 import SocialLink from "../social-link/social-link";
 import HeroTitle from "./hero-title";
+import { ChevronsDown } from "react-feather";
 
 const Hero = ({}) => {
   return (
@@ -34,7 +35,7 @@ const Hero = ({}) => {
           number={57}
         />
       </div>
-
+      <ChevronsDown className={`${styles.downIcon}`} size={80} />
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="1923.447"

@@ -9,6 +9,7 @@
   user-select: none;
   text-decoration: none;
   overflow: hidden;
+  background-color: black;
 
   &:hover  > .overlay_left {
     top: 0;
@@ -28,6 +29,7 @@
   color: white;
   mix-blend-mode: difference;
   text-align: center;
+  font-weight: 500;
   flex: 1;
   z-index: 2;
   grid-row-start: 1;
