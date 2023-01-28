@@ -13,6 +13,10 @@
   padding: 20px;
   z-index: 99;
   backdrop-filter: blur(20px);
+
+  @media (max-width: variables.$mobile-cutoff) {
+    height: 70px;
+  }
 }
 
 .title {
@@ -23,6 +27,10 @@
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media (max-width: variables.$mobile-cutoff) {
+    display: none;
   }
 }
 
@@ -44,11 +52,37 @@
   &__links {
     margin-left: auto;
     width: fit-content;
+    
 
     & > a {
       font-size: 3rem;
       font-weight: 500;
       margin-left: 30px;
+      display: inline-block;
+      position: relative;
+      color: white;
+      z-index: 2;
+
+      &:after{
+        content: '';
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        transform: scaleY(0);
+        height: 100%;
+        bottom: 0;
+        mix-blend-mode: difference;
+
+        left: 0;
+        background-color: white;
+        transform-origin: top right;
+        transition: transform 0.25s ease-out;
+      }
+
+      &:hover:after {
+        transform: scaleY(1);
+        transform-origin: top left;
+      }
 
       &:hover {
         cursor: pointer;

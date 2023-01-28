@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Menu } from "react-feather";
 
 import styles from "./header.module.scss";
 
@@ -9,19 +8,24 @@ const Header = ({}) => {
   return (
     <div className={`${styles.container}`}>
       <h2 className={`${styles.title}`}>tungstun</h2>
-      <div className={`${styles.menu} ${menuOpen && (styles.menu__open)}`}>
+      <div className={`${styles.menu} ${menuOpen && styles.menu__open}`}>
         <nav className={`${styles.menu__links}`}>
           <a>projects</a>
           <a>photography</a>
           <a>contact</a>
         </nav>
-        <Menu 
+        <div
           onClick={() => {
-            setMenuOpen(!menuOpen); 
-            console.log("hi")
+            setMenuOpen(!menuOpen);
+            console.log("hi");
           }}
-          className={`${styles.menu__icon}`} 
-          size={50} />
+        >
+          <object
+            type="image/svg+xml"
+            data="/index/menu.svg"
+            className={`${styles.menu__icon}`}
+          />
+        </div>
       </div>
     </div>
   );

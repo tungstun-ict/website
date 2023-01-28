@@ -10,6 +10,12 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 350px;
+
+  @media (max-width: variables.$mobile-cutoff) {
+    justify-content: flex-start;
+    height: 100vh;
+    margin-bottom: 0;
+  }
 }
 
 .socials {
@@ -18,8 +24,9 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
 
-  @media(max-width: variables.$mobile-cutoff) {
+  @media (max-width: variables.$mobile-cutoff) {
     grid-template-columns: 1fr 1fr;
+    transform: scale(0.8);
   }
 }
 
@@ -28,7 +35,25 @@
   height: fit-content;
   position: absolute;
   z-index: 0;
-  bottom: -30%;
+  bottom: 0;
+  transform: translateY(40%);
+
+  @media (max-width: variables.$mobile-cutoff) {
+    display: none;
+  }
+}
+
+.mobileBlobs {
+  width: calc(100%);
+  height: fit-content;
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  transform: translateY(60%);
+
+  @media (min-width: variables.$mobile-cutoff) {
+    display: none;
+  }
 }
 
 .downIcon {
@@ -38,4 +63,8 @@
   z-index: 2;
   bottom: 100px;
   transform: translateX(-50%);
+  
+  @media (max-width: variables.$mobile-cutoff) {
+    display: none;
+  }
 }

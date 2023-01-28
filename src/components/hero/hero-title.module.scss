@@ -20,8 +20,13 @@
     height: 800px;
   }
 
-  @media(max-width: variables.$mobile-cutoff) {
-    transform: translate(0, -50px)
+  @media (max-width: variables.$mobile-cutoff) {
+    width: 100vw;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
   }
 }
 
@@ -34,10 +39,8 @@
   height: 0;
   transition: 0.3s ease-in-out;
 
-  @media(max-width: variables.$mobile-cutoff) {
-    transform: translate(-50%, -600px);
-    width: 1000px;
-    height: auto;
+  @media (max-width: variables.$mobile-cutoff) {
+    display: none;
   }
 }
 
@@ -47,7 +50,7 @@
   color: white;
 
   @media(max-width: variables.$mobile-cutoff) {
-    font-size: 4rem;
+    font-size: 3rem;
   }
 
   &__white {
@@ -68,8 +71,8 @@
     top: 50%;
     transform: translate(-50%, -50%);
 
-    @media(max-width: variables.$mobile-cutoff) {
-      opacity: 100%;
+    @media (max-width: variables.$mobile-cutoff) {
+      display: none;
     }
   }
 
