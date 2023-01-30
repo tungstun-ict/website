@@ -1,3 +1,5 @@
+@use "../../variables.scss";
+
 .container {
   position: relative;
   width: 100%;
@@ -5,6 +7,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: variables.$mobile-cutoff) {
+    margin-bottom: 150px;
+  }
 }
 
 .title {

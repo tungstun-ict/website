@@ -1,0 +1,46 @@
+@use "../variables.scss";
+
+html, body {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+* {
+  font-family: Paralucent, sans-serif;
+  font-style: normal;
+}
+
+section {
+  min-height: calc(100vh - 70px);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sectionContent {  
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.projectsGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  
+  grid-gap: 50px;
+
+
+
+  @media (max-width: variables.$mobile-cutoff) {
+    grid-template-columns: 1fr;
+  }
+}
