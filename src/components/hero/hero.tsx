@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import styles from "./hero.module.scss";
 import SocialLink from "../social-link/social-link";
@@ -6,6 +6,46 @@ import HeroTitle from "./hero-title";
 import { ChevronsDown } from "react-feather";
 
 const Hero = ({}) => {
+  const colors = ["#fab664", "#f9515a", "#82cac2"];
+
+  useEffect(() => {
+    var objects = Array.from(
+      document.getElementsByTagName("object") as HTMLCollectionOf<HTMLObjectElement>
+    );
+
+    objects?.forEach(findBubbles);
+
+    function findBubbles(object: HTMLObjectElement) {
+      const doc = object.contentDocument
+
+      const blobs = Array.from(doc?.getElementsByTagName("path") as HTMLCollectionOf<SVGPathElement>);
+      console.log(blobs)
+
+      blobs?.forEach(changeAnimationParameters) 
+    }
+
+    function shuffle (array: string[]) { 
+      for (let i = array.length - 1; i > 0; i--) { 
+        const j = Math.floor(Math.random() * (i + 1)); 
+        [array[i], array[j]] = [array[j], array[i]]; 
+      } 
+      return array; 
+    }; 
+
+    function changeAnimationParameters(item: SVGPathElement) {
+      const scale = Math.random() * (1.4 - 1.1) + 1.1;
+      const speed = Math.random() * (50 - 20) + 20;
+      
+      const shuffled = shuffle(colors);
+
+      item.style.setProperty("--start-color", shuffled[0]);
+      item.style.setProperty("--middle-color", shuffled[1]);
+      item.style.setProperty("--end-color", shuffled[2]);
+
+      item.style.animation = `wobble ${speed}s infinite`;
+    }
+  }, []);
+
   return (
     <div className={`${styles.container}`}>
       <HeroTitle />
@@ -35,10 +75,16 @@ const Hero = ({}) => {
           number={57}
         />
       </div>
-      <ChevronsDown className={`${styles.downIcon}`} size={80} />
-      <object className={`${styles.blobs}`} type="image/svg+xml" data="/index/blobs.svg"></object>
-      <object className={`${styles.mobileBlobs}`} type="image/svg+xml" data="/index/mobile-blobs.svg"></object>
-
+      <object
+        className={`${styles.blobs}`}
+        type="image/svg+xml"
+        data="/index/blobs.svg"
+      ></object>
+      <object
+        className={`${styles.mobileBlobs}`}
+        type="image/svg+xml"
+        data="/index/mobile-blobs.svg"
+      ></object>
     </div>
   );
 };

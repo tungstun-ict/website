@@ -1,9 +1,10 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import Header from "../components/header/header";
 import Hero from "../components/hero/hero";
-import ProjectCard from "../components/project-card/ProjectCard";
 import Title from "../components/title/title";
 import "./index.scss";
+
 ---
 
 <html lang="en">
@@ -14,40 +15,10 @@ import "./index.scss";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
+    <ViewTransitions />
   </head>
   <body>
     <Header client:load />
-    <Hero />
-    <section class="section projects">
-      <Title>projects</Title>
-      <div class="sectionContent">
-        <div class="projectsGrid">
-          <ProjectCard
-            image="/projects/bartap.png"
-            title="bartap" 
-            subtext="Java, Springboot, React PWA" />
-          <ProjectCard 
-            image="/projects/bijleveld.png"
-            title="Boekhandel Bijleveld"
-            subtext="Website in wordpress"/>
-          <ProjectCard 
-            image="/projects/billy.png"
-            title="Billy"
-            subtext="Accessible PWA"/>
-          <ProjectCard 
-            image="/projects/mytendance.png"
-            title="InfoSupport Minor"
-            subtext="Microservice architecture" />
-          <ProjectCard 
-            image="/projects/allesmetboeken.png"
-            title="alles met boeken" 
-            subtext="Logo design" />
-          <ProjectCard 
-            image="/projects/bartjesbar.png"
-            title="Bartje's Bar"
-            subtext="Logo design" />
-        </div>
-      </div>
-    </section>
+    <Hero client:load />
   </body>
 </html>

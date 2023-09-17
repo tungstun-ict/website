@@ -9,7 +9,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 350px;
 
   @media (max-width: variables.$mobile-cutoff) {
     justify-content: flex-start;
@@ -33,7 +32,7 @@
 .blobs {
   width: calc(100%);
   height: fit-content;
-  position: absolute;
+  position: fixed;
   z-index: 0;
   bottom: 0;
   transform: translateY(40%);
@@ -46,25 +45,12 @@
 .mobileBlobs {
   width: calc(100%);
   height: fit-content;
-  position: absolute;
+  position: fixed;
   z-index: 0;
   bottom: 0;
   transform: translateY(60%);
 
   @media (min-width: variables.$mobile-cutoff) {
-    display: none;
-  }
-}
-
-.downIcon {
-  position: absolute;
-  color: white;
-  left: 50%;
-  z-index: 2;
-  bottom: 100px;
-  transform: translateX(-50%);
-  
-  @media (max-width: variables.$mobile-cutoff) {
     display: none;
   }
 }

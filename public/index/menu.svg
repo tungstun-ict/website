@@ -7,4 +7,20 @@
       <path id="Path_957" data-name="Path 957" d="M6.285-1.187c1.29,0,5.386.5,6.737,1.187C15.367,1.172,16,4.872,16,8c0,1.538.649,2.45-1.351,4.45S10.881,16,8,16c-2.081,0-4.6.3-6.255-1.222C.375,13.533,0,10.337,0,8,0,3.582,1.867-1.187,6.285-1.187Z" transform="translate(17 40)" fill="#f9515a"/>
     </g>
   </g>
+  <style>
+          @keyframes wobble {
+            0% {
+              fill: var(--start-color);
+            }
+            33% {
+              fill: var(--middle-color);
+            }
+            66% {
+              fill: var(--end-color);
+            }
+            100% {
+              fill: var(--start-color);
+            }
+          }
+        </style>
 </svg>
