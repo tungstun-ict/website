@@ -35,13 +35,14 @@ const Hero = ({}) => {
     function changeAnimationParameters(item: SVGPathElement) {
       const scale = Math.random() * (1.4 - 1.1) + 1.1;
       const speed = Math.random() * (50 - 20) + 20;
+      const transform = item.transform;
+
+      console.log()
       
-      const shuffled = shuffle(colors);
-
-      item.style.setProperty("--start-color", shuffled[0]);
-      item.style.setProperty("--middle-color", shuffled[1]);
-      item.style.setProperty("--end-color", shuffled[2]);
-
+      item.style.setProperty("--scale", scale.toString());
+      item.style.setProperty("--current-transform-x", transform.baseVal[0].matrix.e.toString());
+      item.style.setProperty("--current-transform-y", transform.baseVal[0].matrix.f.toString());
+      
       item.style.animation = `wobble ${speed}s infinite`;
     }
   }, []);

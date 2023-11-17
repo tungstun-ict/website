@@ -10,9 +10,9 @@ const Header = ({}) => {
       <h2 className={`${styles.title}`}>tungstun</h2>
       <div className={`${styles.menu} ${menuOpen && styles.menu__open}`}>
         <nav className={`${styles.menu__links}`}>
-          <a>projects</a>
-          <a>photography</a>
-          <a>contact</a>
+          <a className={`${styles.glitch}`} data-text="pr0j3cts">projects</a>
+          <a className={`${styles.glitch}`} data-text="ph0t0gr4phy">photography</a>
+          <a className={`${styles.glitch}`} data-text="conta6-">contact</a>
         </nav>
         <div
           onClick={() => {

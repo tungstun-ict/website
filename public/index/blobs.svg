@@ -60,6 +60,7 @@
           <path
             class="blob"
             id="Path_953"
+            style="animation: wobble 2s infinite"
             data-name="Path 953"
             d="M2231.49,451.232c31.348,34.831,43,80.634,72.608,122.431s22.612,190.877,40.027,236.157,97.527,97.527,113.2,121.909,31.348,102.751-41.8,137.582-181.583,69.92-181.583,69.92"
             transform="translate(-2234.937 -94.812)"
@@ -69,16 +70,16 @@
         <style>
           @keyframes wobble {
             0% {
-              fill: var(--start-color);
+              transform: scale(1.0) translate(var(--current-transform-x), var(--current-transform-y));
+              -webkit-transform: scale(1.0) translate(var(--current-transform-x), var(--current-transform-y));
             }
-            33% {
-              fill: var(--middle-color);
-            }
-            66% {
-              fill: var(--end-color);
+            50% {
+              transform: scale(5.0) translate(var(--current-transform-x), var(--current-transform-y));
+              -webkit-transform: scale(5.0) translate(var(--current-transform-x), var(--current-transform-y));
             }
             100% {
-              fill: var(--start-color);
+              transform: scale(1.0) translate(var(--current-transform-x), var(--current-transform-y));
+              -webkit-transform: scale(1.0) translate(var(--current-transform-x), var(--current-transform-y));
             }
           }
         </style>
