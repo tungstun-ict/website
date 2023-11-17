@@ -7,12 +7,12 @@ const Header = ({}) => {
 
   return (
     <div className={`${styles.container}`}>
-      <h2 className={`${styles.title}`}>tungstun</h2>
+      <a href="/"><h2 className={`${styles.title}`}>tungstun</h2></a>
       <div className={`${styles.menu} ${menuOpen && styles.menu__open}`}>
         <nav className={`${styles.menu__links}`}>
-          <a className={`${styles.glitch}`} data-text="pr0j3cts">projects</a>
-          <a className={`${styles.glitch}`} data-text="ph0t0gr4phy">photography</a>
-          <a className={`${styles.glitch}`} data-text="conta6-">contact</a>
+          <a href="/projects" className={`${styles.glitch}`} data-text="pr0j3cts">projects</a>
+          <a href="/photography" className={`${styles.glitch}`} data-text="ph0t0gr4phy">photography</a>
+          <a href="/contact" className={`${styles.glitch}`} data-text="conta6-">contact</a>
         </nav>
         <div
           onClick={() => {

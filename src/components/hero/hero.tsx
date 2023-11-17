@@ -24,14 +24,6 @@ const Hero = ({}) => {
       blobs?.forEach(changeAnimationParameters) 
     }
 
-    function shuffle (array: string[]) { 
-      for (let i = array.length - 1; i > 0; i--) { 
-        const j = Math.floor(Math.random() * (i + 1)); 
-        [array[i], array[j]] = [array[j], array[i]]; 
-      } 
-      return array; 
-    }; 
-
     function changeAnimationParameters(item: SVGPathElement) {
       const scale = Math.random() * (1.4 - 1.1) + 1.1;
       const speed = Math.random() * (50 - 20) + 20;
