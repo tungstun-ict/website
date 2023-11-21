@@ -8,37 +8,6 @@ import { ChevronsDown } from "react-feather";
 const Hero = ({}) => {
   const colors = ["#fab664", "#f9515a", "#82cac2"];
 
-  useEffect(() => {
-    var objects = Array.from(
-      document.getElementsByTagName("object") as HTMLCollectionOf<HTMLObjectElement>
-    );
-
-    objects?.forEach(findBubbles);
-
-    function findBubbles(object: HTMLObjectElement) {
-      const doc = object.contentDocument
-
-      const blobs = Array.from(doc?.getElementsByTagName("path") as HTMLCollectionOf<SVGPathElement>);
-      console.log(blobs)
-
-      blobs?.forEach(changeAnimationParameters) 
-    }
-
-    function changeAnimationParameters(item: SVGPathElement) {
-      const scale = Math.random() * (1.4 - 1.1) + 1.1;
-      const speed = Math.random() * (50 - 20) + 20;
-      const transform = item.transform;
-
-      console.log()
-      
-      item.style.setProperty("--scale", scale.toString());
-      item.style.setProperty("--current-transform-x", transform.baseVal[0].matrix.e.toString());
-      item.style.setProperty("--current-transform-y", transform.baseVal[0].matrix.f.toString());
-      
-      item.style.animation = `wobble ${speed}s infinite`;
-    }
-  }, []);
-
   return (
     <div className={`${styles.container}`}>
       <HeroTitle />
