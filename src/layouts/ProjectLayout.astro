@@ -11,10 +11,30 @@ const { frontmatter } = Astro.props;
   </head>
   <!-- ... -->
   <Page title={frontmatter.title}>
-    <div class={}>
-      {frontmatter.tags.map((tag) => <div>{tag}</div>)}
+    <div class="tags">
+      {frontmatter.tags.map((tag: string) => <div class="tag">{tag}</div>)}
     </div>
-    <slot />
+    <div class="content"><slot /></div>
   </Page>
 
 </html>
+
+<style>
+  .tags {
+    display: flex;
+  }
+
+  .content {
+    font-size: 20px;
+  }
+
+  .tag {
+    font-size: 20px;
+    margin-right: 15px;
+    background-color: #82CAC2;
+    padding: 5px 10px;
+    border-radius: 100px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+  }
+</style>

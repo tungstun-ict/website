@@ -21,18 +21,16 @@ const allProjects = await getCollection("projects");
   </head>
   <body>
     <Page title={"Projects"}>
-      <ul>
-        {
-          allProjects.map(project => (
-            <ProjectCard
-              title={project.data.title}
-              link={`/projects/${project.slug}`}
-              description={project.data.description}
-              picture={project.data.image.url}
-            />
-          ))
-        }
-      </ul>
+      {
+        allProjects.map(project => (
+          <ProjectCard
+            title={project.data.title}
+            link={`/projects/${project.slug}`}
+            description={project.data.description}
+            picture={project.data.image.url}
+          />
+        ))
+      }
     </Page>
   </body>
 </html>

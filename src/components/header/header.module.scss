@@ -20,17 +20,38 @@
 }
 
 .title {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
   font-size: 3rem;
+  font-weight: bold;
+  margin-left: 30px;
+  display: inline-block;
+  position: relative;
+  color: white;
+  z-index: 2;
 
-  &:hover {
-    cursor: pointer;
+
+  &:after {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    transform: scaleY(0);
+    height: 100%;
+    bottom: 0;
+    mix-blend-mode: difference;
+
+    left: 0;
+    background-color: white;
+    transform-origin: top right;
+    transition: transform 0.25s ease-out;
   }
 
-  @media (max-width: variables.$mobile-cutoff) {
-    display: none;
+  &:hover:after {
+    transform: scaleY(1);
+    transform-origin: top left;
+  }
+
+  &:hover {
+    cursor: pointer; 
   }
 }
 

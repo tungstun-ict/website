@@ -11,7 +11,7 @@ const Page = ({ title, children }: PageProps) => {
     <div className={styles.page}>
       <Header />
       <div className={styles.container}>
-        <h1>{title}</h1>
+        <h1 className={styles.title}>{title}</h1>
         {children}
       </div>
     </div>

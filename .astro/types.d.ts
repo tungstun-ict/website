@@ -193,7 +193,7 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 "infosupport.md": {
 	id: "infosupport.md";
-  slug: "info-support";
+  slug: "bijleveld";
   body: string;
   collection: "projects";
   data: InferEntrySchema<"projects">

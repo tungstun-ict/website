@@ -1,11 +1,11 @@
 ---
-title: Info Support
-tags: [React, Cool]
-slug: info-support
-description: Hello there
+title: Boekhandel Bijleveld - Website
+tags: [Wordpress]
+slug: bijleveld
+description: Boekhandel Bijleveld wilt een website.
 image:
-  url: hellothere
-  alt: hello
+  url: projects-icons/bijleveld.png
+  alt: logo of bijleveld bookstore
 ---
 
 # Info Support

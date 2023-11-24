@@ -1,10 +1,10 @@
 ---
-title: Bartap
+title: Bartap - Catering management service
 tags: [React, Cool]
 slug: bartap
 description: Hello there
 image:
-  url: hellothere
+  url: projects-icons/bartap.png
   alt: hello
 ---
 
