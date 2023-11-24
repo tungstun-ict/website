@@ -18,6 +18,11 @@
   &:hover .title_clip {
     width: 800px;
     height: 800px;
+    transition: 0.3s ease-in-out;
+  }
+
+  &:hover::after .title_clip {
+    transition: 0.3s ease-in-out;
   }
 
   @media (max-width: variables.$mobile-cutoff) {
@@ -37,7 +42,6 @@
   transform: translate(-50%, -50%);
   width: 0;
   height: 0;
-  transition: 0.3s ease-in-out;
 
   @media (max-width: variables.$mobile-cutoff) {
     display: none;
