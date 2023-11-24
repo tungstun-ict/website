@@ -1,22 +1,29 @@
 ---
 import Page from "../components/page/page.tsx";
+import { ViewTransitions } from "astro:transitions";
 
 const { frontmatter } = Astro.props;
 ---
 
-<html>
+<html transition:animate="fade" lang="en">
   <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="https://use.typekit.net/zil5gof.css" />
     <link rel="stylesheet" href="/styles/global.css" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Tungstun</title>
+    <ViewTransitions />
   </head>
-  <!-- ... -->
-  <Page title={frontmatter.title}>
-    <div class="tags">
-      {frontmatter.tags.map((tag: string) => <div class="tag">{tag}</div>)}
-    </div>
-    <div class="content"><slot /></div>
-  </Page>
-
+  <body>
+    <Page title={frontmatter.title}>
+      <div class="tags">
+        {frontmatter.tags.map((tag: string) => <div class="tag">{tag}</div>)}
+      </div>
+      <div class="content"><slot /></div>
+    </Page>
+  </body>
 </html>
 
 <style>
