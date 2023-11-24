@@ -1,9 +1,8 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import Page from "../../components/page/page";
-import Header from "../../components/header/header";
-import ProjectCard from "../../components/project/project";
 import { getCollection } from "astro:content";
+import Project from "../../components/project/project.astro";
 
 const allProjects = await getCollection("projects");
 ---
@@ -23,9 +22,9 @@ const allProjects = await getCollection("projects");
     <Page title={"Projects"}>
       {
         allProjects.map(project => (
-          <ProjectCard
+          <Project
             title={project.data.title}
-            link={`/projects/${project.slug}`}
+            link={`${project.slug}`}
             description={project.data.description}
             picture={project.data.image.url}
           />

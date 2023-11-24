@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+import SocialLink from "../social-link/social-link.tsx";
+import HeroTitle from "./hero-title.tsx";
+import Blobs from "../../assets/svgs/blobs.svg";
+import MobileBlobs from "../../assets/svgs/mobile-blobs.svg";
+---
+
+<div class="container">
+  <HeroTitle />
+  <div class="socials">
+    <SocialLink
+      link="https://www.linkedin.com/in/jort-willemsen-363746198/"
+      abbreviation="Li"
+      text="LinkedIn"
+      number={3}
+    />
+    <SocialLink
+      link="https://www.behance.net/jortwillemsen"
+      abbreviation="Be"
+      text="Behance"
+      number={4}
+    />
+    <SocialLink
+      link="https://www.instagram.com/tungstun_design_ict/"
+      abbreviation="In"
+      text="Instagram"
+      number={49}
+    />
+    <SocialLink
+      link="https://github.com/jortwillemsen"
+      abbreviation="Gi"
+      text="Github"
+      number={57}
+    />
+  </div>
+  <Image class="blobs" src={Blobs} alt="blobs" />
+  <Image class="mobileBlobs" src={MobileBlobs} alt="mobile blobs" />
+  <object class="blobs" type="image/svg+xml" data="/index/blobs.svg"></object>
+  <object
+    class="mobileBlobs"
+    type="image/svg+xml"
+    data="/index/mobile-blobs.svg"></object>
+</div>
+
+<style>
+  .container {
+    position: relative;
+    width: 100%;
+    height: calc(100vh);
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 700px) {
+      justify-content: flex-start;
+      height: 100vh;
+      margin-bottom: 0;
+    }
+  }
+
+  .socials {
+    display: grid;
+    z-index: 1;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+
+    @media (max-width: 700px) {
+      grid-template-columns: 1fr 1fr;
+      transform: scale(0.8);
+    }
+  }
+
+  .blobs {
+    width: calc(100%);
+    height: fit-content;
+    position: fixed;
+    z-index: 0;
+    bottom: 0;
+    transform: translateY(40%);
+
+    @media (max-width: 700px) {
+      display: none;
+    }
+  }
+
+  .mobileBlobs {
+    width: calc(100%);
+    height: fit-content;
+    position: fixed;
+    z-index: 0;
+    bottom: 0;
+    transform: translateY(60%);
+
+    @media (min-width: 700px) {
+      display: none;
+    }
+  }
+</style>

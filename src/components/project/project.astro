@@ -1,0 +1,67 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  link: string;
+  title: string;
+  description: string;
+  picture: string;
+};
+
+const {title, link, picture, description} = Astro.props;
+---
+
+<a href={link} class="container">
+  <img class="picture" src={`./src/assets/project-icons/${picture}`} alt="hello" />
+  <div class="content">
+    
+    <h3 class="title">{title}</h3>
+    <p class="description">{description}</p>
+  </div>
+</a>
+
+<style>
+  .container {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    margin-top: 50px;
+    transition: 0.3s ease-in-out;
+    padding: 10px;
+    border-radius: 11px;
+  }
+
+  .container:hover > .content {
+    filter: invert(1);
+  }
+
+  .container:hover > .picture {
+    transform: scale(1.1);
+  }
+
+  .container:hover {
+    transform: scale(1.1);
+    background-color: white;
+    padding: 0;
+  }
+
+  .content {
+    flex: 1;
+  }
+
+  .picture {
+    transition: 0.3s ease-in-out;
+    height: 100%;
+    aspect-ratio: 1;
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .description {
+    width: 100%;
+  }
+</style>

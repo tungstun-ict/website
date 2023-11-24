@@ -4,7 +4,7 @@ tags: [React, Cool]
 slug: bartap
 description: Hello there
 image:
-  url: projects-icons/bartap.png
+  url: bartap.png
   alt: hello
 ---
 
