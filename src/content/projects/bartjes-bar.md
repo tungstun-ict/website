@@ -1,11 +1,11 @@
 ---
-title: Bartap - Catering management service
-tags: [React, Cool]
-slug: bartap
-description: Bartap is a passion project and consists of a react progressive web app and react-natve app connected to a spring boot backend api.
+title: Bartje's Bar - Logo
+tags: [Logo, Design]
+slug: bartjes-bar
+description: Hello there
 image:
-  url: bartap.png
-  alt: Bartap logo
+  url: bartjesbar.png
+  alt: Logo bartjes bar
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

@@ -22,8 +22,11 @@ const { title, link, picture, description } = Astro.props;
 <style lang="scss">
   .container {
     @media (max-width: 1200px) {
-      height: 100px;
-      margin: 20px 20px;
+      height: 150px;
+      margin: 20px 0 20px 0;
+      padding: 0 20px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     width: 100%;
@@ -51,6 +54,8 @@ const { title, link, picture, description } = Astro.props;
 
   .content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   .picture {
@@ -64,6 +69,7 @@ const { title, link, picture, description } = Astro.props;
   .title {
     font-size: 30px;
     text-align: left;
+    text-overflow: ellipsis ellipsis;
     
     @media (max-width: 1200px) {
       font-size: 20px;
@@ -72,6 +78,9 @@ const { title, link, picture, description } = Astro.props;
   }
 
   .description {
-    width: 100%;
-  }
+    display: block;
+    margin: 5px 0 0 0;
+    overflow: hidden;
+    flex: 1;
+}
 </style>
