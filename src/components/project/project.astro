@@ -1,27 +1,31 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 interface Props {
   link: string;
   title: string;
   description: string;
   picture: string;
-};
+}
 
-const {title, link, picture, description} = Astro.props;
+const { title, link, picture, description } = Astro.props;
 ---
 
 <a href={link} class="container">
   <img class="picture" src={`/assets/project-icons/${picture}`} alt="hello" />
   <div class="content">
-    
     <h3 class="title">{title}</h3>
     <p class="description">{description}</p>
   </div>
 </a>
 
-<style>
+<style lang="scss">
   .container {
+    @media (max-width: 1200px) {
+      height: 100px;
+      margin: 20px 20px;
+    }
+
     width: 100%;
     height: 200px;
     display: flex;
@@ -59,6 +63,12 @@ const {title, link, picture, description} = Astro.props;
 
   .title {
     font-size: 30px;
+    text-align: left;
+    
+    @media (max-width: 1200px) {
+      font-size: 20px;
+      margin: 0;
+    }
   }
 
   .description {

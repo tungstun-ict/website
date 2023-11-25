@@ -5,17 +5,38 @@
   top: 0;
   width: 100vw;
   height: 100px;
-  background-color: rgba($color: #000000, $alpha: 0.6);
   color: white;
   display: flex;
   align-items: center;
   box-sizing: border-box;
   padding: 20px;
   z-index: 99;
+  background-color: rgba($color: #000000, $alpha: 0.6);
   backdrop-filter: blur(20px);
 
   @media (max-width: variables.$mobile-cutoff) {
     height: 70px;
+  }
+}
+
+.icon {
+  display: none;
+  cursor: pointer;
+
+  @media (max-width: variables.$mobile-cutoff) {
+    display: block;
+    height: 50px;
+    aspect-ratio: 1;
+  }
+}
+
+.page_title {
+  font-size: 3rem;
+  margin-left: 20px;
+
+  @media (max-width: variables.$mobile-cutoff) {
+    margin: 0 0 0 10px;
+    font-size: 1.4rem;
   }
 }
 
@@ -28,9 +49,12 @@
   color: white;
   z-index: 2;
 
+  @media (max-width: variables.$mobile-cutoff) {
+    display: none;
+  }
 
   &:after {
-    content: '';
+    content: "";
     z-index: 1;
     position: absolute;
     width: 100%;
@@ -51,8 +75,12 @@
   }
 
   &:hover {
-    cursor: pointer; 
+    cursor: pointer;
   }
+}
+
+.menuButton {
+  cursor: pointer;
 }
 
 .menu {
@@ -61,28 +89,58 @@
   @media (max-width: variables.$mobile-cutoff) {
     &__open {
       & > .menu__links {
-        position: absolute;
         display: flex;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
         left: 0;
         flex-direction: column;
         top: 100px;
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        backdrop-filter: blur(20px);
       }
+    }
+
+    & > div {
+      cursor: pointer;
     }
   }
 
   &__links {
-    margin-left: auto;
+    margin-top: auto;
     width: fit-content;
 
     & > a {
-
       font-size: 3rem;
       font-weight: 500;
       margin-left: 30px;
       display: inline-block;
       position: relative;
+      width: fit-content;
       color: white;
       z-index: 2;
+
+      &:after {
+        content: "";
+        z-index: 1;
+        position: absolute;
+        width: 100%;
+        transform: scaleY(0);
+        height: 100%;
+        bottom: 0;
+        mix-blend-mode: difference;
+
+        left: 0;
+        background-color: white;
+        transform-origin: top right;
+        transition: transform 0.25s ease-out;
+      }
+
+      &:hover:after {
+        transform: scaleY(1);
+        transform-origin: top left;
+      }
 
       &:hover {
         cursor: pointer;
@@ -96,106 +154,15 @@
 
   &__icon {
     display: none;
-
+    width: 40px;
+    height: 40px;
+    transform: scale(1.2);
     &:hover {
       cursor: pointer;
     }
 
     @media (max-width: variables.$mobile-cutoff) {
       display: block;
-      margin-left: auto;
     }
   }
-}
-
-$bg-color: #000;
-$glitch-bg-color: $bg-color;
-
-.glitch:hover {
-  position: relative;
-  background: $glitch-bg-color;
-  
-}
-
-.glitch:hover:before,
-.glitch:hover:after {
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  animation-direction: alternate-reverse;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  clip: rect(0, 900px, 0, 0);
-  content: attr(data-text);
-  
-}
-
-.glitch:hover:after {
-  animation-name: glitch-animation;
-  animation-duration: 4s;
-  left: 4px;
-  text-shadow: -1px 0 #000;
-  background: $glitch-bg-color;
-
-}
-
-.glitch:hover:before {
-  animation-name: glitch-animation-2;
-  animation-duration: 6s;
-  left: -4px;
-  text-shadow: 1px 0 #000;
-  background: $glitch-bg-color;
-}
-
-@mixin rect($top, $bottom) {
-  clip: rect($top, 9999px, $bottom, 0);
-}
-
-/* Expanded Animations */
-@keyframes glitch-animation {
-  0% { @include rect(42px, 44px); }
-  5% { @include rect(12px, 59px); }
-  10% { @include rect(48px, 29px); }
-  15.0% { @include rect(42px, 73px); }
-  20% { @include rect(63px, 27px); }
-  25% { @include rect(34px, 55px); }
-  30.0% { @include rect(86px, 73px); }
-  35% { @include rect(20px, 20px); }
-  40% { @include rect(26px, 60px); }
-  45% { @include rect(25px, 66px); }
-  50% { @include rect(57px, 98px); }
-  55.0% { @include rect(5px, 46px); }
-  60.0% { @include rect(82px, 31px); }
-  65% { @include rect(54px, 27px); }
-  70% { @include rect(28px, 99px); }
-  75% { @include rect(45px, 69px); }
-  80% { @include rect(23px, 85px); }
-  85.0% { @include rect(54px, 84px); }
-  90% { @include rect(45px, 47px); }
-  95% { @include rect(37px, 20px); }
-  100% { @include rect(4px, 91px); }
-}
-
-@keyframes glitch-animation-2 {
-  0% { @include rect(65px, 100px); }
-  5% { @include rect(52px, 74px); }
-  10% { @include rect(79px, 85px); }
-  15.0% { @include rect(75px, 5px); }
-  20% { @include rect(67px, 61px); }
-  25% { @include rect(14px, 79px); }
-  30.0% { @include rect(1px, 66px); }
-  35% { @include rect(86px, 30px); }
-  40% { @include rect(23px, 98px); }
-  45% { @include rect(85px, 72px); }
-  50% { @include rect(71px, 75px); }
-  55.0% { @include rect(2px, 48px); }
-  60.0% { @include rect(30px, 16px); }
-  65% { @include rect(59px, 50px); }
-  70% { @include rect(41px, 62px); }
-  75% { @include rect(2px, 82px); }
-  80% { @include rect(47px, 73px); }
-  85.0% { @include rect(3px, 27px); }
-  90% { @include rect(26px, 55px); }
-  95% { @include rect(42px, 97px); }
-  100% { @include rect(38px, 49px); }
 }

@@ -1,0 +1,43 @@
+---
+import Header from "../header/header.tsx";
+interface Props {
+  title: string;
+  children: any;
+}
+
+const { title, children } = Astro.props;
+---
+
+<div class="page">
+  <Header title={title} client:load />
+  <div class="container">
+    <slot />
+  </div>
+</div>
+
+<style lang="scss">
+  .container {
+    text-align: justify;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin-top: 100px;
+    height: 100%;
+    width: 100%;
+    color: white;
+
+    @media (max-width: 1200px) {
+      max-width: 100%;
+    }
+  }
+
+  .page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .title {
+    font-size: 50px;
+  }
+</style>

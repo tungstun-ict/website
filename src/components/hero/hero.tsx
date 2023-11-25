@@ -6,8 +6,6 @@ import HeroTitle from "./hero-title";
 import { ChevronsDown } from "react-feather";
 
 const Hero = ({}) => {
-  const colors = ["#fab664", "#f9515a", "#82cac2"];
-
   return (
     <div className={`${styles.container}`}>
       <HeroTitle />
