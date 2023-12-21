@@ -12,11 +12,11 @@ const { title, link, picture, description } = Astro.props;
 ---
 
 <a href={link} class="container">
-  <img class="picture" src={`/assets/project-icons/${picture}`} alt="hello" />
-  <div class="content">
+  <div class="grid">
+    <img class="picture" src={`/assets/project-icons/${picture}`} alt="hello" />
     <h3 class="title">{title}</h3>
     <p class="description">{description}</p>
-  </div>
+  <div>
 </a>
 
 <style lang="scss">
@@ -28,10 +28,9 @@ const { title, link, picture, description } = Astro.props;
       width: 100%;
       box-sizing: border-box;
     }
-
+    display: flex;
     width: 100%;
     height: 200px;
-    display: flex;
     margin-top: 50px;
     transition: 0.3s ease-in-out;
     padding: 10px;
@@ -52,6 +51,10 @@ const { title, link, picture, description } = Astro.props;
     padding: 0;
   }
 
+  .grid {
+    display: grid;
+  }
+
   .content {
     flex: 1;
     display: flex;
@@ -64,12 +67,34 @@ const { title, link, picture, description } = Astro.props;
     aspect-ratio: 1;
     margin-right: 20px;
     border-radius: 10px;
+
+    grid-column-start: 1;
+    grid-column-end: 1;
+
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    @media (max-width: 1200px) {
+      height: 80px;
+
+      grid-column-start: 1;
+      grid-column-end: 1;
+
+      grid-row-start: 1;
+      grid-row-end: 1;
+    }
   }
 
   .title {
     font-size: 30px;
     text-align: left;
     text-overflow: ellipsis ellipsis;
+
+    grid-column-start: 2;
+    grid-column-end: 2;
+
+    grid-row-start: 1;
+    grid-row-end: 1;
     
     @media (max-width: 1200px) {
       font-size: 20px;
@@ -79,8 +104,23 @@ const { title, link, picture, description } = Astro.props;
 
   .description {
     display: block;
-    margin: 5px 0 0 0;
     overflow: hidden;
     flex: 1;
+
+    
+    grid-column-start: 2;
+    grid-column-end: 2;
+
+    grid-row-start: 2;
+    grid-row-end: 2;
+
+    @media (max-width: 1200px) {
+      
+      grid-column-start: 1;
+      grid-column-end: 2;
+
+      grid-row-start: 2;
+      grid-row-end: 2;
+    }
 }
 </style>

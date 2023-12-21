@@ -32,12 +32,14 @@
 }
 
 .page_title {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-left: 20px;
+  font-weight: normal;
 
   @media (max-width: variables.$mobile-cutoff) {
     margin: 0 0 0 10px;
     font-size: 1.4rem;
+    font-weight: bold;
   }
 }
 

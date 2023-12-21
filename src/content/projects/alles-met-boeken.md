@@ -1,6 +1,6 @@
 ---
 title: Alles met boeken - Logo
-tags: [Logo, Design]
+tags: [Logo, Design, More, Even More, Another one, Yes another one, Even morrrre]
 slug: alles-met-boeken
 description: Tungstun designed the logo for Alles met boeken. They give book advise to local schools and book stores.
 image:
