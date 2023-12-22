@@ -37,19 +37,21 @@ const { title, link, picture, description } = Astro.props;
     transition: 0.3s ease-in-out;
     padding: 10px;
     border-radius: 11px;
-  }
 
-  .container:hover > .grid {
-    & > .title,
-    & > .description {
-      filter: invert(1);
+    @media (min-width: 1200px) {
+      &:hover {
+        transform: scale(1.1);
+        background-color: white;
+        padding: 0;
+
+        & > .grid {
+          & > .title,
+          & > .description {
+            filter: invert(1);
+          }
+        }
+      }
     }
-  }
-
-  .container:hover {
-    transform: scale(1.1);
-    background-color: white;
-    padding: 0;
   }
 
   .grid {
@@ -87,7 +89,7 @@ const { title, link, picture, description } = Astro.props;
   }
 
   .description {
-    display: -webkit-box;    
+    display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
     flex: 1;

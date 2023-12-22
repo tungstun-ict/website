@@ -21,23 +21,9 @@ const Header = ({ title }: { title?: string }) => {
       <h1 className={`${styles.page_title}`}>{title}</h1>
       <div className={`${styles.menu} ${menuOpen && styles.menu__open}`}>
         <nav className={`${styles.menu__links}`}>
-          <a
-            href="/projects"
-            className={`${styles.glitch}`}
-            data-text="pr0j3cts"
-          >
-            projects
-          </a>
-          <a
-            href="/photography"
-            className={`${styles.glitch}`}
-            data-text="ph0t0gr4phy"
-          >
-            photography
-          </a>
-          <a href="/contact" className={`${styles.glitch}`} data-text="conta6-">
-            contact
-          </a>
+          <a href="/projects">projects</a>
+          {/* <a href="/photography">photography</a>
+          <a href="/contact">contact</a> */}
         </nav>
         <div
           className={`${styles.menuButton}`}

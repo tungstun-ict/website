@@ -1,0 +1,52 @@
+---
+---
+<footer class="footer">
+  <div class="info">
+    <div class="left">
+      Tungstun<br>
+      Wereldtuinenlaan 49<br>
+      3452RZ Utrecht
+    </div>
+    <div class="middle">
+      T - 06 5892 4036<br>
+      E - jort@tungstun.nl<br>
+      I - www.tungstun.nl
+    </div>
+    <div class="right">
+      NL32 ASNB 0267 4649 91<br>
+      BTW NL003391342B15<br>
+      K.v.K 80087639
+    </div>
+  </div>
+</footer>
+
+<style lang="scss">
+  .footer {
+    color: #c8c8c8;
+    width: 100vw;
+    height: 250px;
+    background-color: #0e0e0e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 1200px) {
+      height: 350px;
+    }
+  }
+
+  .info {
+
+    @media (max-width: 1200px) {
+      flex-direction: column;
+      height: 300px;
+      width: 100%;
+    }
+
+    display: flex;
+    text-align: center;
+    width: 50%;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+</style>
