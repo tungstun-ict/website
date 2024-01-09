@@ -1,0 +1,104 @@
+---
+import Profile from "../components/profile/profile.astro";
+import Page from "../components/page/page.astro";
+import Certificate from "../components/certificate/certificate.astro";
+import Technology from "../components/technology.astro";
+---
+
+<html transition:animate="fade" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="https://use.typekit.net/zil5gof.css" />
+    <link rel="stylesheet" href="/styles/global.css" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Tungstun</title>
+  </head>
+  <body>
+    <Page title="About" centered>
+      <Profile />
+
+      <section class="academic">
+        <h3>Academic experience</h3>
+        <div class="documents">
+          <Certificate
+            degreeType="DIPLOMA"
+            institution="Leidscherijn College"
+            degree="HAVO"
+            tagline="Natuur & Techniek"
+            year="from 2014 to 2019"
+          />
+
+          <Certificate
+            degreeType="DIPLOMA"
+            institution="Hogeschool Utrecht"
+            degree="HBO ICT"
+            tagline="Software Engineering"
+            year="from 2019 to 2023"
+          />
+          <Certificate
+            degreeType="CERTIFICATE"
+            institution="Stap in"
+            degree="Leiderschap"
+            tagline=""
+            year="2021"
+          />
+        </div>
+      </section>
+
+      <section class="techology">
+        <h3>Techonological experience</h3>
+        <Technology
+          name="Frontend development"
+          tags={[
+            "Frontend",
+            "React",
+            "Astro",
+            "Website",
+            "Wordpress"
+          ]}
+        />
+        <Technology
+          name="Backend development"
+          tags={[
+            "Backend",
+            "C#",
+            "Dotnet",
+            "Java",
+            "Spring Boot",
+          ]}
+        />
+        <Technology
+          name="Logo design"
+          tags={[
+            "Logo",
+            "Design"
+          ]}
+        />
+      </section>
+    </Page>
+  </body>
+</html>
+
+<style lang="scss">
+  section {
+    & > h3 {
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-size: 30px;
+    }
+    border-radius: 5px;
+    margin: 25px;
+    width: 100%;
+  }
+
+  .documents {
+    height: 340px;
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+</style>

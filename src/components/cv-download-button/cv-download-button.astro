@@ -1,0 +1,30 @@
+---
+---
+<button class="cv">
+  download CV
+</button>
+
+<script>
+  // Find all buttons with the `alert` class on the page.
+  const buttons = document.querySelectorAll('button.cv');
+
+  // Handle clicks on each button.
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      alert('Button was clicked!');
+    });
+  });
+</script>
+
+<style lang="scss">
+  .cv {
+    width: 200px;
+    height: 40px;
+    border: none;
+    background-color: #212121;
+    color: #484848;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>

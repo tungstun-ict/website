@@ -1,0 +1,85 @@
+---
+import { Image } from "astro:assets";
+import Stamp from "./stamp.svg";
+
+interface Props {
+  degreeType: string;
+  institution: string;
+  degree: string;
+  tagline: string;
+  year: string;
+}
+
+const { degreeType, institution, degree, tagline, year } = Astro.props;
+---
+
+<div class="certificate">
+  <h4 class="type">{degreeType}</h4>
+  <hr class="divider"/>
+  <p class="undertitle">of achievement</p>
+
+  <h3 class="degree">{degree}</h3>
+  <p class="tagline">{tagline}</p>
+
+  <div class="bottom">
+    <p class="institution">{institution}</p>
+    <p class="year">{year}</p>
+  </div>
+  <Image class="stamp" src={Stamp} alt=""/>
+</div>
+
+<style lang="scss">
+  .certificate {
+    min-width: 500px;
+    min-height: 300px;
+    max-width: 500px;
+    max-height: 300px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff3d1;
+    position: relative;
+  }
+
+  .type {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 20px 0 0 0;
+  }
+
+  .divider {
+    border: 1px black solid;
+    width: 200px;
+    margin: 5px;
+  }
+
+  .undertitle {
+    margin: 0;
+  }
+
+  .degree {
+    font-size: 40px;
+    margin: 20px 0 0 0;
+  }
+
+  .tagline {
+    margin: 0;
+  }
+
+  .bottom {
+    margin-top: auto;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding:  0 20px;
+  }
+
+  .stamp {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: -40px;
+  }
+</style>

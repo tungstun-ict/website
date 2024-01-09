@@ -3,10 +3,11 @@ import Header from "../header/header.tsx";
 import Footer from "../footer/footer.astro";
 interface Props {
   title: string;
+  centered: boolean;
   children: any;
 }
 
-const { title, children } = Astro.props;
+const { title, centered, children } = Astro.props;
 ---
 
 <div class="page">
@@ -19,6 +20,9 @@ const { title, children } = Astro.props;
 
 <style lang="scss">
   .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: justify;
     box-sizing: border-box;
     max-width: 1200px;
