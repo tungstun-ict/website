@@ -20,16 +20,19 @@ const projects = await getCollection("projects", ({ data }) => {
   <div class="tags">
     {tags.map((tag: string) => <div class="tag">{tag}</div>)}
   </div>
-  {
-    projects.slice(0, 2).map((project) => (
-      <Project
-        title={project.data.title}
-        link={`projects/${project.slug}`}
-        description={project.data.description}
-        picture={project.data.image.url}
-      />
-    ))
-  }
+  <div class="projects">
+    {
+      projects.slice(0, 5).map((project) => (
+        <Project
+          small
+          title={project.data.title}
+          link={`projects/${project.slug}`}
+          description={project.data.description}
+          picture={project.data.image.url}
+        />
+      ))
+    }
+  </div>
 </div>
 
 <style lang="scss">
@@ -63,6 +66,11 @@ const projects = await getCollection("projects", ({ data }) => {
     width: 100%;
     max-height: 30px;
     cursor: pointer;
+  }
+
+  .projects {
+    display: flex;
+    overflow-x: auto;
   }
 
   .tag {

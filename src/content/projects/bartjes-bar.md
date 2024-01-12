@@ -2,7 +2,7 @@
 title: Bartje's Bar - Logo
 tags: [Logo, Design]
 slug: bartjes-bar
-description: Hello there
+description: Bartje's bar, a local pub in Harmelen (NL) needed a logo to welcome it's customers. We opted for a 30's style mascotte formed to look like a cocktail shaker since the pub is well known for their cocktails.
 image:
   url: bartjesbar.png
   alt: Logo bartjes bar
