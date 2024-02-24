@@ -1,12 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import Pic from "./profile-pic.jpg";
-import DownloadButton from "../cv-download-button/cv-download-button.astro"
+import DownloadButton from "../download-button/download-button.astro"
 ---
 <div class="profile">
   <Image class="picture" src={Pic} alt="Profile picture of a very handsome young man in full suit during a christmas dinner" />
   <h2 class="name">Jort Willemsen</h2>
-  <!-- <DownloadButton /> -->
+  <DownloadButton title="Download CV" link="/docs/Curriculum_Vitae.pdf"/>
   <p>
     Hi I am Jort and I created Tungstun to express my creativity to the world and help other people with their digital struggles.
     This can include things like creating a website, designing a logo, developing software solutions or building a personal (gaming) computer!
