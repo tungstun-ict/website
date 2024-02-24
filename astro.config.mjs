@@ -7,7 +7,7 @@ import vercel from '@astrojs/vercel/serverless';
 export default defineConfig({
   integrations: [react(), mdx()],
   site: "https://www.tungstun.nl",
-  output: 'server',
+  output: 'hybrid',
   adapter: vercel({
     webAnalytics: { enabled: true }
   }),
