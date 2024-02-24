@@ -3,12 +3,25 @@ import { ViewTransitions } from "astro:transitions";
 import Page from "../../components/page/page.astro";
 import { getCollection } from "astro:content";
 import Project from "../../components/project/project.astro";
+import { Database } from "react-feather";
+import { SEO } from "astro-seo";
 
 const allProjects = await getCollection("projects");
 ---
 
 <html transition:animate="fade" lang="en">
   <head>
+    <SEO
+      title="Projects | Tungstun"
+      description="All projects that Tungstun worked on, from logos to websites."
+      openGraph={{
+        basic: {
+          title: "Projects | Tungstun",
+          type: "article",
+          image: "/assets/tungstun-icon-white.png",
+        },
+      }}
+    />
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="https://use.typekit.net/zil5gof.css" />
@@ -21,7 +34,7 @@ const allProjects = await getCollection("projects");
   <body>
     <Page title={"| projects"}>
       {
-        allProjects.map((project) => (
+        allProjects.sort((a, b) => Date.parse(b.data.date) - Date.parse(a.data.date)).map((project) => (
           <Project
             small={false}
             title={project.data.title}

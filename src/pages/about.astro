@@ -3,10 +3,22 @@ import Profile from "../components/profile/profile.astro";
 import Page from "../components/page/page.astro";
 import Certificate from "../components/certificate/certificate.astro";
 import Technology from "../components/technology.astro";
+import { SEO } from "astro-seo";
 ---
 
 <html transition:animate="fade" lang="en">
   <head>
+    <SEO
+      title="About | Tungstun"
+      description="Hi I am Jort and I created Tungstun to express my creativity to the world and help other people with their digital struggles. This can include things like creating a website, designing a logo, developing software solutions or building a personal (gaming) computer! I love learning, therefore after graduating with a bachelors degree in software engineering from the Utrecht University of Applied Sciences (HU) I wanted to continue my studies by entering a computing science masters program at Utrecht University. This will help to specilize my knownledge of computer programming to the more theoretical side compared to the more practical courses at the HU. During my spare time I really like photography, watching movies and learning about really intersting things such as space, physics and all other kinds of things that grab my attention! Just shoot a message if you think we could do a project together. In the meantime just take a look around this piece of my mind :D "
+      openGraph={{
+        basic: {
+          title: "About | Tungstun",
+          type: "article",
+          image: "/assets/tungstun-icon-white.png",
+        },
+      }}
+    />
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="https://use.typekit.net/zil5gof.css" />
@@ -51,59 +63,40 @@ import Technology from "../components/technology.astro";
         <h3>Techonological experience</h3>
         <Technology
           name="Frontend development"
-          tags={[
-            "Frontend",
-            "React",
-            "Astro",
-            "Website",
-            "Wordpress"
-          ]}
+          tags={["Frontend", "React", "Astro", "Website", "Wordpress"]}
         />
         <Technology
           name="Backend development"
-          tags={[
-            "Backend",
-            "C#",
-            "Dotnet",
-            "Java",
-            "Spring Boot",
-          ]}
+          tags={["Backend", "C#", "Dotnet", "Java", "Spring Boot"]}
         />
-        <Technology
-          name="Logo design"
-          tags={[
-            "Logo",
-            "Design"
-          ]}
-        />
+        <Technology name="Logo design" tags={["Logo", "Design"]} />
       </section>
     </Page>
+    <style lang="scss">
+      section {
+        & > h3 {
+          width: 100%;
+          text-align: center;
+          color: white;
+          font-size: 40px;
+          margin: 60px 0;
+        }
+        border-radius: 5px;
+        margin: 25px;
+        width: 100%;
+      }
+
+      .documents {
+        height: 340px;
+        display: flex;
+        gap: 20px;
+        overflow-x: scroll;
+        overflow-y: hidden;
+
+        @media (max-width: 1200px) {
+          height: max-content;
+        }
+      }
+    </style>
   </body>
 </html>
-
-<style lang="scss">
-  section {
-    & > h3 {
-      width: 100%;
-      text-align: center;
-      color: white;
-      font-size: 40px;
-      margin: 60px 0;
-    }
-    border-radius: 5px;
-    margin: 25px;
-    width: 100%;
-  }
-
-  .documents {
-    height: 340px;
-    display: flex;
-    gap: 20px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-
-    @media (max-width: 1200px) {
-      height: max-content;
-    }
-  }
-</style>

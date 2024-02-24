@@ -146,18 +146,20 @@ const { small, title, link, picture, description, tags } = Astro.props;
   .description {
     display: -webkit-box;
     overflow: hidden;
-    text-overflow: ellipsis;
-    flex: 1;
     margin: 0;
-    padding: 10px;
-    grid-area: 3 / 2 / 3 / 3;
+    padding: 0 10px;
+    font-size: 20px;
+    -webkit-box-orient: vertical;
+    max-width: 100%;
     -webkit-line-clamp: 4;
     line-clamp: 4;
-    word-wrap: break-word;
 
     @media (max-width: 1200px) {
       font-size: 12px;
       grid-area: 2 / 2 / 4 / 3;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      line-height: 1.5em;
     }
   }
 </style>

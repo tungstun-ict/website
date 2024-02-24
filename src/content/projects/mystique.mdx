@@ -3,11 +3,16 @@ title: Mystique
 tagline: automated front-end testing
 tags: [Front-end, Testing, Typescript, Jest, Node.JS, Figma]
 slug: mystique
+date: 01-10-2023
 description: Mystique is a bachelor thesis research project to find out if automated front-end component testing is possible, based on front-end user-interface designs. To achieve this, a custom cli utility was created that communicates with Figma to extract testable properties from user-interface designs that can be turned in to unit-tests. To achieve this a Node.JS ClI application was created that can generate a suite of tests to execute in a project.
 image:
   url: mystique.png
   alt: Logo Mystique
 ---
+import DownloadButton from "../../components/download-button/download-button.astro"
+
+<DownloadButton title="Thesis (Dutch)" link="/docs/Scriptie.pdf" />
+<DownloadButton title="Github" link="https://github.com/JortWillemsen/mystique" />
 
 # Mystique
 
@@ -262,10 +267,10 @@ For this project, the platform is also expected to support reading the design fi
 
 | Platform | Key features                                                                  | Design file on demand                                                                                                                                                                                                                                                                         |
 | -------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Adobe XD | <ul><li>Workflow integration<li>Element creation (interactable & reusable)    | Adobe XD provides a scriptable API to develop plugins. Adobe states that plugins provide support for creating designs, collaborating on designs, and sharing designs with other people. So it does not offer a solution for this project. (Adobe XD APIs for Developers and Scripters, s.d.). |
-| Invision | <ul><li>Outline user journeys<li>Create design handoff features               | Invision offers many integrations with other tools including Google Docs and Jira. but has no way to manually or automatically retrieve design files (Invision, 2023).                                                                                                                        |
-| Framer   | <ul><li>Close to production prototyping<li>First-party HTML & CSS integration | Framer offers "Custom page code" and "code overrides." Ways to customize the user interface within Framer and add functionality. It has no way to export designs (Framer: Developers, s.d.).                                                                                                  |
-| Figma    | <ul><li>Cloud-based design<li>Collaboration tools<li>Browser-based interface  | Figma provides a REST API that allows a JSON representation of the design from which specific properties can be extracted (Figma, s.d.).                                                                                                                                                      |
+| Adobe XD | <ul><li>Workflow integration</li><li>Element creation (interactable & reusable)</li></ul>    | Adobe XD provides a scriptable API to develop plugins. Adobe states that plugins provide support for creating designs, collaborating on designs, and sharing designs with other people. So it does not offer a solution for this project. (Adobe XD APIs for Developers and Scripters, s.d.). |
+| Invision | <ul><li>Outline user journeys</li><li>Create design handoff features</li></ul>               | Invision offers many integrations with other tools including Google Docs and Jira. but has no way to manually or automatically retrieve design files (Invision, 2023).                                                                                                                        |
+| Framer   | <ul><li>Close to production prototyping</li><li>First-party HTML & CSS integration</li></ul> | Framer offers "Custom page code" and "code overrides." Ways to customize the user interface within Framer and add functionality. It has no way to export designs (Framer: Developers, s.d.).                                                                                                  |
+| Figma    | <ul><li>Cloud-based design</li><li>Collaboration tools</li><li>Browser-based interface</li></ul>  | Figma provides a REST API that allows a JSON representation of the design from which specific properties can be extracted (Figma, s.d.).                                                                                                                                                      |
 
 </div>
 

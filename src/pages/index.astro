@@ -4,9 +4,21 @@ import Header from "../components/header/header";
 import Hero from "../components/hero/hero.astro";
 import Title from "../components/title/title";
 import Footer from "../components/footer/footer.astro";
+import {SEO} from "astro-seo";
 ---
 <html transition:animate="fade" lang="en">
   <head>
+    <SEO
+      title="Tungstun"
+      description="Hi! This is Tungstun, a small tech company based in Utrecht, the Netherlands. We create websites, Personal computers and logos!"
+      openGraph={{
+        basic: {
+          title: "Tungstun",
+          type: "article",
+          image: "/assets/tungstun-icon-white.png",
+        },
+      }}
+    />
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="https://use.typekit.net/zil5gof.css" />

@@ -1,12 +1,24 @@
 ---
 import Page from "../components/page/page.astro";
 import { ViewTransitions } from "astro:transitions";
+import { SEO } from "astro-seo";
 
 const { frontmatter } = Astro.props;
+
 ---
 
 <html transition:animate="fade" lang="en">
   <head>
+    <SEO
+      title={frontmatter.title}
+      description={frontmatter.description}
+      openGraph={{
+        basic: {
+          title: frontmatter.title,
+          type: "article",
+          image: frontmatter.image.url
+        }
+      }}/>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="https://use.typekit.net/zil5gof.css" />

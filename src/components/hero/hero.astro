@@ -35,7 +35,7 @@ import NewProject from "../new-project/new-project.astro";
       number={57}
     />
   </div>
-  <div class="new-project"><NewProject /></div>
+  <div class="new-pproject"><NewProject /></div>
   <Image class="blobs" src={Blobs} alt="blobs" />
   <Image class="mobileBlobs" src={MobileBlobs} alt="mobile blobs" />
   <object class="blobs" type="image/svg+xml" data="/index/blobs.svg"></object>
@@ -76,10 +76,13 @@ import NewProject from "../new-project/new-project.astro";
     }
   }
 
-  .new-project {
-    position: absolute;
-    bottom: 40px;
-    z-index: 99;
+  .new-pproject {
+    margin-top: 50px;
+    z-index: 999;
+
+    @media (max-width: 800px) {
+      display: none;
+    }
   }
 
   .blobs {

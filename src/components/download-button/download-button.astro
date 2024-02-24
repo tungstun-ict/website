@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+  link: string;
+}
+
+const {title, link} = Astro.props;
+---
+<a href={link} class="download_button">
+  {title}
+</a>
+
+<style lang="scss">
+  .download_button {
+    margin: 20px 0 0 10px;
+    display: inline-block;
+    width: 200px;
+    height: fit-content;
+    border: none;
+    padding: 20px;
+    background-color: #212121;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+</style>
