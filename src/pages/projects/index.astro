@@ -25,7 +25,7 @@ const allProjects = await getCollection("projects");
           <Project
             small={false}
             title={project.data.title}
-            link={`projects/${project.slug}`}
+            link={project.slug}`}
             description={project.data.description}
             picture={project.data.image.url}
           />

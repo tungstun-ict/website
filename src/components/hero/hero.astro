@@ -4,6 +4,7 @@ import SocialLink from "../social-link/social-link.tsx";
 import HeroTitle from "./hero-title.tsx";
 import Blobs from "../../assets/svgs/blobs.svg";
 import MobileBlobs from "../../assets/svgs/mobile-blobs.svg";
+import NewProject from "../new-project/new-project.astro";
 ---
 
 <div class="container">
@@ -34,6 +35,7 @@ import MobileBlobs from "../../assets/svgs/mobile-blobs.svg";
       number={57}
     />
   </div>
+  <div class="new-project"><NewProject /></div>
   <Image class="blobs" src={Blobs} alt="blobs" />
   <Image class="mobileBlobs" src={MobileBlobs} alt="mobile blobs" />
   <object class="blobs" type="image/svg+xml" data="/index/blobs.svg"></object>
@@ -53,6 +55,7 @@ import MobileBlobs from "../../assets/svgs/mobile-blobs.svg";
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow-y: hidden;
 
     @media (max-width: 700px) {
       justify-content: flex-start;
@@ -71,6 +74,12 @@ import MobileBlobs from "../../assets/svgs/mobile-blobs.svg";
       grid-template-columns: 1fr 1fr;
       transform: scale(0.8);
     }
+  }
+
+  .new-project {
+    position: absolute;
+    bottom: 20px;
+    z-index: 99;
   }
 
   .blobs {

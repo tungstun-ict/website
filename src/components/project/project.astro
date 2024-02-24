@@ -68,6 +68,10 @@ const { small, title, link, picture, description } = Astro.props;
 
   .small {
     width: fit-content;
+    box-sizing: border-box;
+    &:hover {
+        transform: scale(0.9);
+      }
   }
 
   .grid {

@@ -1,0 +1,82 @@
+---
+import { Image } from "astro:assets";
+import Star from "./star-burst.svg";
+import { getCollection } from "astro:content";
+
+const project = (await getCollection("projects"))[0];
+---
+
+<a class="new-project" href=`/projects/${project.slug}`>
+  <div class="star">
+    <div class="new-star">
+      <Image class="new-star-star" src={Star} alt="" />
+      <p class="new-star-text">NEW</p>
+    </div>
+  </div>
+  <div class="background">
+    <p class="text">{project.data.title} - {project.data.tagline} -></p>
+  </div>
+</a>
+
+<style lang="scss">
+  .new-star {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    transform: rotate(-30deg);
+  }
+
+  .new-star-text {
+    z-index: 99;
+    font-weight: bold;
+    color: white;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .new-project {
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      & > .star {
+        transform: translate(-50%, 0) scale(1.5);
+      }
+    }
+  }
+
+  .star {
+    transition: 0.3s;
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, 0);
+  }
+
+  .text {
+    flex: 1;
+    margin: 0 20px 0 50px;
+    padding: 0;
+    font-size: 20px;
+    text-align: center;
+    color: black;
+  }
+
+  .background {
+    box-sizing: border-box;
+    border-radius: 100px;
+    width: 500px;
+    height: 50px;
+    background-color: rgba($color: #fff, $alpha: 0.2);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(20px);
+  }
+</style>

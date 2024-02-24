@@ -187,42 +187,7 @@ declare module 'astro:content' {
 		"projects": {
 "alles-met-boeken.md": {
 	id: "alles-met-boeken.md";
-  slug: "alles-met-boeken";
-  body: string;
-  collection: "projects";
-  data: InferEntrySchema<"projects">
-} & { render(): Render[".md"] };
-"aviation.md": {
-	id: "aviation.md";
-  slug: "aviation";
-  body: string;
-  collection: "projects";
-  data: InferEntrySchema<"projects">
-} & { render(): Render[".md"] };
-"bartap.md": {
-	id: "bartap.md";
-  slug: "bartap";
-  body: string;
-  collection: "projects";
-  data: InferEntrySchema<"projects">
-} & { render(): Render[".md"] };
-"bartjes-bar.md": {
-	id: "bartjes-bar.md";
-  slug: "bartjes-bar";
-  body: string;
-  collection: "projects";
-  data: InferEntrySchema<"projects">
-} & { render(): Render[".md"] };
-"bijleveld.md": {
-	id: "bijleveld.md";
-  slug: "bijleveld";
-  body: string;
-  collection: "projects";
-  data: InferEntrySchema<"projects">
-} & { render(): Render[".md"] };
-"billy.md": {
-	id: "billy.md";
-  slug: "billy";
+  slug: "mystique";
   body: string;
   collection: "projects";
   data: InferEntrySchema<"projects">
