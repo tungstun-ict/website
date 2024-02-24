@@ -1,0 +1,70 @@
+---
+import Profile from "../components/profile/profile.astro";
+import Page from "../components/page/page.astro";
+import Certificate from "../components/certificate/certificate.astro";
+import Technology from "../components/technology.astro";
+import { SEO } from "astro-seo";
+---
+
+<html transition:animate="fade" lang="en">
+  <head>
+    <SEO
+      title="Contact | Tungstun"
+      description="Contact tungstun by email: jort@tungstun.nl"
+      openGraph={{
+        basic: {
+          title: "Contact | Tungstun",
+          type: "article",
+          image: "/assets/tungstun-icon-white.png",
+        },
+      }}
+    />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="https://use.typekit.net/zil5gof.css" />
+    <link rel="stylesheet" href="/styles/global.css" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Tungstun</title>
+  </head>
+  <body>
+    <Page title="Contact" centered>
+      <a class="mail" href="mailto:jort@tungstun.nl"
+        ><p>email:</p><h2><strong>jort@tungstun.nl</strong></h2></a
+      >
+    </Page>
+
+    <style lang="scss">
+      .mail {
+        margin-top: 50%;
+        display: flex;
+        font-weight: 200;
+        justify-self: center;
+        align-self: center;
+
+        & > p {
+          font-size: 64px;
+          margin: 0 30px 0 0;
+          padding: 0;
+        }
+
+        & > h2 {
+          margin: 0;
+          padding: 0;
+          font-size: 64px;
+        }
+      
+        @media (max-width: 1000px) {
+          & > p {
+            font-size: 25px;
+          }
+
+          & > h2 {
+            font-size: 25px;
+
+          }
+        }
+      }
+    </style>
+  </body>
+</html>

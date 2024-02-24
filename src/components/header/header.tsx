@@ -23,6 +23,7 @@ const Header = ({ title }: { title?: string }) => {
         <nav className={`${styles.menu__links}`}>
           <a href="/projects">projects</a>
           <a href="/about">about</a>
+          <a href="/contact">contact</a>
           {/* <a href="/photography">photography</a>
           <a href="/contact">contact</a> */}
         </nav>
