@@ -185,8 +185,8 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"projects": {
-"alles-met-boeken.md": {
-	id: "alles-met-boeken.md";
+"mystique.md": {
+	id: "mystique.md";
   slug: "mystique";
   body: string;
   collection: "projects";
@@ -197,7 +197,9 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		
+		"images": {
+};
+
 	};
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;

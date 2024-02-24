@@ -17,3 +17,59 @@ const { Content } = await entry.render();
 <ProjectLayout frontmatter={entry.data}>
   <Content />
 </ProjectLayout>
+
+<style is:global lang="scss">
+
+  .content > h1, h2, h3, h4 {
+    color: white;
+    overflow-x: hidden;
+  }
+
+  div:has(table) {
+    overflow-x: scroll;
+  }
+  table {
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+
+    & tbody {
+      box-sizing: border-box;
+      outline-offset: -5px;
+      outline: 5px solid #1e1e1e;
+    }
+
+    & td, th {
+      padding: 10px;
+      height: 30px;
+    }
+
+    & thead {
+      background-color: white;
+      color: black;
+    }
+
+    & tr:nth-child(odd) td{
+      background-color: #1e1e1e;
+    }
+  }
+
+  .content img {
+    width: 100%;
+    height: fit-content;
+  }
+
+  p:has(em) { 
+    text-align: right;
+    color: #353535;
+
+    & > em {
+      font-style: italic;
+    }
+  }
+
+  .content .collapsible {
+    padding-left: 20px;
+    border-left: 3px solid rgb(108, 108, 108);
+  }
+</style>
