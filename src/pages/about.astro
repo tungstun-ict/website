@@ -63,13 +63,14 @@ import { SEO } from "astro-seo";
         <h3>Techonological experience</h3>
         <Technology
           name="Frontend development"
-          tags={["Frontend", "React", "Astro", "Website", "Wordpress"]}
+          tags={["Frontend", "React", "Astro", "Website", "Wordpress" ,"PWA", "Typescript", "iOS", "Android", "React Native", "Storybook", "Node.JS", "Jest", "WebdriverIO"]}
         />
         <Technology
           name="Backend development"
-          tags={["Backend", "C#", "Dotnet", "Java", "Spring Boot"]}
+          tags={["Backend", "Dotnet", "Spring Boot", "Event Sourcing", "Domain Driven Design", "CQRS", "CI/CD", "Micro-service", "Functional Programming"]}
         />
-        <Technology name="Logo design" tags={["Logo", "Design"]} />
+        <Technology name="Languages" tags={["C#", "Haskell", "Java", "Javascript", "Typescript", "Python", "HTML / CSS", "SQL"]} />
+        <Technology name="Miscellaneous" tags={["Illustrator", "Adobe XD", "Figma", "Firebase", "MySQL", "PostreSQL", "SQLServer", "SQLite", "Unity", "Godot"]} />
       </section>
     </Page>
     <style lang="scss">
@@ -87,11 +88,12 @@ import { SEO } from "astro-seo";
       }
 
       .documents {
-        height: 340px;
+        height: fit-content;
+        padding-bottom: 40px;
         display: flex;
         gap: 20px;
-        overflow-x: scroll;
-        overflow-y: hidden;
+        overflow-x: auto;
+        overflow-y: visible;
 
         @media (max-width: 1200px) {
           height: max-content;

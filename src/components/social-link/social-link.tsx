@@ -11,7 +11,7 @@ type Props = {
 
 const SocialLink = ({ abbreviation, text, number, link }: Props) => {
   return (
-    <a href={link} className={`${styles.container}`}>
+    <a target="_blank" href={link} className={`${styles.container}`}>
       <div className={`${styles.top}`}>
         <h3 className={`${styles.abbreviation}`}>{abbreviation}</h3>
         <p className={`${styles.text}`}>({text})</p>

@@ -105,7 +105,9 @@ const { small, title, link, picture, tagline ,description, tags } = Astro.props;
     white-space: nowrap;
     text-overflow: ellipsis;
     padding: 0 10px;
-
+    display: flex;
+    width: fit-content;
+    min-width: fit-content;
     margin: 0;
 
     @media (max-width: 1200px) {
@@ -117,12 +119,16 @@ const { small, title, link, picture, tagline ,description, tags } = Astro.props;
     grid-area: 1 / 2 / 2 / 3;
     display: flex;
     align-items: center;
+    overflow: hidden;
   }
 
   .tagline {
     font-size: 25px;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 
     @media (max-width: 1200px) {
       font-size: 15px;
