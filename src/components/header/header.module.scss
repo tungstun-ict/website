@@ -154,6 +154,13 @@
 
     @media (max-width: variables.$mobile-cutoff) {
       display: none;
+      align-items: end;
+
+      & > a {
+        margin-left: 0;
+        margin-right: 30px;
+      }
+      
     }
   }
 
