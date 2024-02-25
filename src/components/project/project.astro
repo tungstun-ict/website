@@ -8,9 +8,10 @@ interface Props {
   description: string;
   picture: string;
   tags: string[];
+  tagline: string;
 }
 
-const { small, title, link, picture, description, tags } = Astro.props;
+const { small, title, link, picture, tagline ,description, tags } = Astro.props;
 ---
 
 <a href={link} class:list={["container", { small: small }]}>
@@ -28,7 +29,7 @@ const { small, title, link, picture, description, tags } = Astro.props;
           src={`/assets/project-icons/${picture}`}
           alt="hello"
         />
-        <h3 class="title">{title}</h3>
+        <div class="titles"><h3 class="title">{title}</h3><p class="tagline">| &nbsp;&nbsp;{tagline}</p></div>
         <div class="tags">
           {tags.map((tag: string) => <div class="tag">{tag}</div>)}
         </div>
@@ -106,11 +107,27 @@ const { small, title, link, picture, description, tags } = Astro.props;
     padding: 0 10px;
 
     margin: 0;
-    grid-area: 1 / 2 / 2 / 3;
 
     @media (max-width: 1200px) {
       font-size: 15px;
     }
+  }
+
+  .titles {
+    grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    align-items: center;
+  }
+
+  .tagline {
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: 1200px) {
+      font-size: 15px;
+    }
+
   }
 
   .tags {

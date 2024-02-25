@@ -10,11 +10,11 @@ const { frontmatter } = Astro.props;
 <html transition:animate="fade" lang="en">
   <head>
     <SEO
-      title={frontmatter.title}
+      title={`${frontmatter.title} - ${frontmatter.tagline}`}
       description={frontmatter.description}
       openGraph={{
         basic: {
-          title: frontmatter.title,
+          title: `${frontmatter.title} - ${frontmatter.tagline}`,
           type: "article",
           image: frontmatter.image.url
         }
@@ -29,7 +29,7 @@ const { frontmatter } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
-    <Page title={frontmatter.title}>
+    <Page title={frontmatter.title} tagline={frontmatter.tagline}>
       <div class="tags">
         {frontmatter.tags.map((tag: string) => <div class="tag">{tag}</div>)}
       </div>

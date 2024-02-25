@@ -7,9 +7,10 @@ interface Props {
   title: string;
   centered: boolean;
   children: any;
+  tagline?: string;
 }
 
-const { title, centered, children } = Astro.props;
+const { title, centered, children, tagline } = Astro.props;
 ---
 
 <div class="page">
