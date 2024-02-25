@@ -2,6 +2,7 @@
 import Page from "../components/page/page.astro";
 import { ViewTransitions } from "astro:transitions";
 import { SEO } from "astro-seo";
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 
 const { frontmatter } = Astro.props;
 
@@ -29,6 +30,7 @@ const { frontmatter } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
+    <SpeedInsights />
     <Page title={frontmatter.title} tagline={frontmatter.tagline}>
       <div class="tags">
         {frontmatter.tags.map((tag: string) => <div class="tag">{tag}</div>)}

@@ -5,6 +5,7 @@ import Hero from "../components/hero/hero.astro";
 import Title from "../components/title/title";
 import Footer from "../components/footer/footer.astro";
 import {SEO} from "astro-seo";
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 ---
 <html transition:animate="fade" lang="en">
   <head>
@@ -29,6 +30,7 @@ import {SEO} from "astro-seo";
     <ViewTransitions />
   </head>
   <body>
+    <SpeedInsights />
     <Header client:load />
     <Hero />
     <Footer />

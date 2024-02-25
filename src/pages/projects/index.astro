@@ -5,6 +5,7 @@ import { getCollection } from "astro:content";
 import Project from "../../components/project/project.astro";
 import { Database } from "react-feather";
 import { SEO } from "astro-seo";
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 
 const allProjects = await getCollection("projects");
 ---
@@ -32,6 +33,7 @@ const allProjects = await getCollection("projects");
     <ViewTransitions />
   </head>
   <body>
+    <SpeedInsights />
     <Page title={"| projects"}>
       {
         allProjects.sort((a, b) => Date.parse(b.data.date) - Date.parse(a.data.date)).map((project) => (

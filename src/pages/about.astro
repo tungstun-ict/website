@@ -4,6 +4,7 @@ import Page from "../components/page/page.astro";
 import Certificate from "../components/certificate/certificate.astro";
 import Technology from "../components/technology.astro";
 import { SEO } from "astro-seo";
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 ---
 
 <html transition:animate="fade" lang="en">
@@ -28,6 +29,7 @@ import { SEO } from "astro-seo";
     <title>Tungstun</title>
   </head>
   <body>
+    <SpeedInsights />
     <Page title="About" centered>
       <Profile />
 
