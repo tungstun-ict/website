@@ -24,9 +24,10 @@ const { frontmatter } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="https://use.typekit.net/zil5gof.css" />
     <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Tungstun</title>
+    <title>Tungstun | {frontmatter.title}</title>
     <ViewTransitions />
   </head>
   <body>
